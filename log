@@ -36,3 +36,9 @@ Tue, Mar 25, 2025  1:06:45 PM:
  tests:  5|4
 total_score: 25/70
 163e938
+Tue, Mar 25, 2025  1:11:26 PM: 
+ list.c | 20 ++++++++++++++++++--
+ 1 file changed, 18 insertions(+), 2 deletions(-)
+ tests:  9|3
+total_score: 35/70
+76e6a2f
