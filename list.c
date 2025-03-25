@@ -49,9 +49,11 @@ void * firstList(List * list){
 //La segunda función retorna el dato del nodo a continuación del current y actualiza el current para que apunte a ese nodo.
 
 void * nextList(List * list) {
-    if(list->current->next != NULL){
+    if(list->current != NULL){
         list->current = list->current->next;
-        return list->current->data;
+        if(list->current != NULL){
+            return list->current->data;
+        }
     }            
     return NULL;
 }
@@ -69,14 +71,21 @@ void * lastList(List * list) {
 //La segunda función retorna el dato del nodo anterior a current y actualiza el current para que apunte a ese nodo.
 
 void * prevList(List * list) {
-    if(list->current->prev != NULL){
+    if(list->current != NULL){
         list->current = list->current->prev;
-        return list->current->data;
+        if(list->current != NULL){
+            return list->current->data;
+        }
     }
     return NULL;
 }
 
 void pushFront(List * list, void * data) {
+    Node *newNode = (Node*)malloc(sizeof(Node));
+    while(list->head != NULL){
+        list->head->prev = newNode;
+        list->head->prev = list->head;
+    }
 }
 
 void pushBack(List * list, void * data) {
