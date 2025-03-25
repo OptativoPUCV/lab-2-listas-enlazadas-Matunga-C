@@ -8,3 +8,14 @@ Tue, Mar 25, 2025 12:38:20 PM:
  tests:  1|5
 total_score: 10/70
 a2fc200
+Tue, Mar 25, 2025 12:50:23 PM: 
+ list.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+In file included from test.c:5:0:
+list.c: In function 'firstList':
+list.c:46:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+728043c
