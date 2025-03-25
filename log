@@ -71,3 +71,17 @@ Tue, Mar 25, 2025  2:34:59 PM:
  tests:  9|3
 total_score: 35/70
 699bd5e
+Tue, Mar 25, 2025  2:54:09 PM: 
+ list.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:5:0:
+list.c: In function 'pushFront':
+list.c:92:5: error: 'pene' undeclared (first use in this function)
+     pene
+     ^~~~
+list.c:92:5: note: each undeclared identifier is reported only once for each function it appears in
+list.c:93:1: error: expected ';' before '}' token
+ }
+ ^
+Compilation failed
+ba90abf
