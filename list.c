@@ -103,12 +103,14 @@ void pushBack(List * list, void * data) {
 void pushCurrent(List * list, void * data) {
     Node *newNode = (Node*)malloc(sizeof(Node));
     newNode->data = data;
-    newNode->next = list->current;
-    newNode->prev = NULL;
-    if(list->current != NULL){
-        list->current->next = newNode;
+    newNode->next = list->current->next;
+    newNode->prev = list->current;
+    if (list->current->next != NULL) {
+        list->current->next->prev = newNode;
+    } else {
+        list->tail = newNode;
     }
-    list->head = newNode;
+    list->current->next = newNode;
 }
 
 void * popFront(List * list) {
