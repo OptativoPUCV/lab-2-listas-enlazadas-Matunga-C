@@ -113,17 +113,6 @@ void pushCurrent(List * list, void * data) {
     list->current->next = newNode;
 }
 
-/*Node *newNode = (Node*)malloc(sizeof(Node));
-    newNode->data = data;
-    newNode->next = list->current->next;
-    newNode->prev = list->current;
-    if (list->current->next != NULL) {
-        list->current->next->prev = newNode;
-    } else {
-        list->tail = newNode;
-    }
-    list->current->next = newNode;*/
-
 
 void * popFront(List * list) {
     list->current = list->head;
@@ -135,7 +124,25 @@ void * popBack(List * list) {
     return popCurrent(list);
 }
 
+//la cual elimina el nodo que está en la posición del current de la lista enlazada, y además retorna el dato del nodo eliminado.
+
 void * popCurrent(List * list) {
+    if(list->current != NULL){
+        Node *aux = list->current;
+        void *data = aux->data;
+        if(aux->prev != NULL){
+            aux->prev->next = aux->next;
+        } else {
+            list->head = aux->next;
+        }
+        if(aux->next != NULL){
+            aux->next->prev = aux->prev;
+        } else {
+            list->tail = aux->prev;
+        }
+        free(aux);
+        return data;
+    }
     return NULL;
 }
 
